@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="demo1">
+      {{msg}}
+
+    <br>
+    <span v-bind:title = "msg1">
+        我有title弹窗
+    </span>
+
+</div>
+<br>
+<div id="demo2">
+  <p v-if="seen"> 是true 你就看到我了</p>
+    <p v-if = "seen1">是的没错 你看不见我 看不见我！！</p>
+</div>
+
+<br>
+<br>
+
+<div id="demo3">
+    <p v-for="k in kv">
+       {{k.id}} {{k.value}}
+    </p>
+</div>
+
+<br>
+<div id="demo4">
+     <input v-model="message">
+    <p>{{message}}</p>
+    <button v-on:click="doSometing1">点我1</button>
+</div>
+<br>
+<ol id="demo5">
+    <p>你好啊</p>
+    <!-- 创建一个 todo-item 组件的实例 -->
+    <todo-item></todo-item>
+</ol>
+
+
+<div id="demo6">
+    <ol>
+        <todo-item1 v-for="v in gList" v-bind:todo="v" v-bind:key="v.id"></todo-item1>
+    </ol>
+</div>
+
+</body>
+<script src="./js/vue.js"></script>
+<script>
+   Vue.component('todo-item1',{
+        props:['todo'],
+        template:'<li>{{todo.test}}{{todo.id}}</li>'
+   })
+    var demo6 = new Vue({
+        el:'#demo6',
+        data:{
+            gList:[
+                {id:0,test:'hai10'},
+                {id:1,test:'hai11'},
+                {id:2,test:'hai12'}
+            ]
+        }
+
+    })
+    // 定义名为 todo-item 的新组件
+    Vue.component('todo-item', {
+        template: '<li>这是个待办项</li>'
+    })
+    var demo5 = new Vue({
+        el:'#demo5',
+    })
+    var  demoData = {
+        msg:'hello world!',
+        msg1:'这是一个title属性' + new  Date()
+    }
+    var demo1= new Vue({
+        el:'#demo1',
+        data:demoData
+    });
+
+
+    var demo2 = new Vue({
+            el:'#demo2',
+            data:{
+                seen:true,
+                seen1:false
+            }
+    });
+
+
+    var demo3 = new Vue({
+        el:"#demo3",
+        data:{
+            kv:[
+                {id:"1",value:"哈哈1"},
+                {id:"2",value:"哈哈2"},
+                {id:"3",value:"哈哈3"}
+            ]
+        }
+    })
+
+    var demo4 = new Vue({
+        el:"#demo4",
+        data :{
+            message:""
+        },
+        methods:{
+            doSometing1:function () {
+                this.message = "你好坏！世界"
+            }
+        }
+    })
+</script>
+</html>
