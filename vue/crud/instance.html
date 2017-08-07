@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+</body>
+<script src="./js/vue.js"></script>
+<script>
+var  data = {a:1}
+var  vm = new Vue({
+    data:data
+})
+    console.log(vm.a == data.a);
+    vm.a = 2;
+
+vm.$watch('a',function (newVal,oldVal) {
+    alert(newVal+"xxx"+oldVal);
+});
+console.log(data.a);
+
+
+    data.a = 3;
+    console.log(vm.a);
+
+
+</script>
+</html>

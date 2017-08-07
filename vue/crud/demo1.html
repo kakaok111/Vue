@@ -47,7 +47,7 @@
 
 <div id="demo6">
     <ol>
-        <todo-item1 v-for="v in gList" v-bind:todo="v" v-bind:key="v.id"></todo-item1>
+        <todo-item1 v-for="v in gList" v-bind:todo="v" v-bind:key='v.id'></todo-item1>
     </ol>
 </div>
 
@@ -56,7 +56,7 @@
 <script>
    Vue.component('todo-item1',{
         props:['todo'],
-        template:'<li>{{todo.test}}{{todo.id}}</li>'
+        template:'<li>{{todo.test}}</li>'
    })
     var demo6 = new Vue({
         el:'#demo6',
