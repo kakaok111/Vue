@@ -18,10 +18,12 @@ var  vm = new Vue({
 })
     console.log(vm.a == data.a);
     vm.a = 2;
+
 vm.$watch('a',function (newVal,oldVal) {
     alert(newVal+"xxx"+oldVal);
 });
 console.log(data.a);
+
 
     data.a = 3;
     console.log(vm.a);
