@@ -27,7 +27,22 @@ console.log(data.a);
 
     data.a = 3;
     console.log(vm.a);
+/**
+ * vue的钩子函数  brforeCreate created brforeMount  mounted  beforeUpdate updated beforeDestory
+ */
 
 
+
+var vm1 = new Vue({
+    data:{
+        a:1
+    },
+    created:function () {
+        console.log("a is"+this.a)
+    }
+})
 </script>
+
+
 </html>
+

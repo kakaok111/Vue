@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+//文本 "Mustache"语法（双大括号）
+<span>输出message：{{msg}}</span>
+
+//通过使用 v-once 指令，你也能执行一次性地插值，当绑定数据对象上的msg属性改变时，
+//插值处的内容不会更新,影响span节点的所有数据绑定
+<span v-once>this willnever change:{{msg}}</span>
+
+</body>
+</html>
